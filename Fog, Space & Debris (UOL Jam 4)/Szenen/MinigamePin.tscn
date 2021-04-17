@@ -1,18 +1,82 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Script/MinigamePin.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/connection_ii/ConnectionII.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/connection_ii/ConnectionII.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Szenen/BackgroundMockup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Art Assets/GuiBoxesV1.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 407.949
-margin_top = 163.458
-margin_right = 596.949
-margin_bottom = 193.458
+[node name="Title" type="Label" parent="."]
+margin_left = 503.158
+margin_top = 20.3969
+margin_right = 609.158
+margin_bottom = 50.3969
 custom_fonts/font = ExtResource( 2 )
-text = "Please Type:"
+text = "Type Pin:"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Number1" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 492.0
+margin_top = 60.0
+margin_right = 518.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number2" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 522.954
+margin_top = 60.3969
+margin_right = 548.954
+margin_bottom = 122.397
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number3" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 553.909
+margin_top = 60.0
+margin_right = 579.909
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number4" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 583.276
+margin_top = 60.0
+margin_right = 609.276
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -1.47086 )
+texture = ExtResource( 5 )
