@@ -8,6 +8,7 @@ var shootRdy = true
 var bulletCooldown = 0
 const SPEED = 2
 const BULLET = preload("res://Szenen/Bullet.tscn")
+const SHOOTINGCOOLDOWN = 10
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,9 +27,13 @@ func shoot(delta):
 	if shootRdy:
 		if Input.is_action_pressed("shoot"):
 			var bullet = BULLET.instance()
+			bullet.set_position(position + Vector2(-19, -4))
+			get_parent().add_child(bullet)
+			bullet = BULLET.instance()
+			bullet.set_position(position + Vector2(19, -4))
 			get_parent().add_child(bullet)
 			shootRdy = false
-			bulletCooldown = 20
+			bulletCooldown = SHOOTINGCOOLDOWN
 	elif bulletCooldown == 0:
 		shootRdy = true
 	else:
