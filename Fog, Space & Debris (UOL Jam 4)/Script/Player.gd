@@ -4,8 +4,10 @@ extends Area2D
 # Declare member variables here:
 var xDirection = 0
 var yDirection = 0
+var shootRdy = true
+var bulletCooldown = 0
 const SPEED = 2
-
+const BULLET = preload("res://Szenen/Bullet.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,12 +16,23 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	movement()
-	
+	shoot(delta)
 	
 
 
+func shoot(delta):
+	if shootRdy:
+		if Input.is_action_pressed("shoot"):
+			var bullet = BULLET.instance()
+			get_parent().add_child(bullet)
+			shootRdy = false
+			bulletCooldown = 20
+	elif bulletCooldown == 0:
+		shootRdy = true
+	else:
+		bulletCooldown -= 1
 
 func movement():
 	xDirection = 0
