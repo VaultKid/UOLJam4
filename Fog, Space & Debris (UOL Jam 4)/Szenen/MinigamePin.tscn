@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Script/MinigamePin.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/connection_ii/ConnectionII.tres" type="DynamicFont" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 407.949
+margin_top = 163.458
+margin_right = 596.949
+margin_bottom = 193.458
+custom_fonts/font = ExtResource( 2 )
+text = "Please Type:"
+__meta__ = {
+"_edit_use_anchors_": false
+}

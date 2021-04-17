@@ -1,6 +1,6 @@
 extends Node
 
-var volume = -6.0
+var volume = -12.0
 
 func _ready():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), volume)
