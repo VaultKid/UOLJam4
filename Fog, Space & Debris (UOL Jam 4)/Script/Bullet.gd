@@ -16,7 +16,8 @@ func _process(_delta):
 	move()
 	if position.y < -320:
 		queue_free()
-	for body in self.get_overlapping_bodies():
+	for body in self.get_overlapping_areas():
+		print("hello")
 		if body.has_method("destroy") && body.is_alive:
 			body.destroy()
 			queue_free()
