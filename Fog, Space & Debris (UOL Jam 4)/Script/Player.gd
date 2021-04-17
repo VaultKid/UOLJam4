@@ -2,44 +2,55 @@ extends Area2D
 
 
 # Declare member variables here:
-var xDirection = 0
-var yDirection = 0
-var shootRdy = true
-var bulletCooldown = 0
-const SPEED = 2
-const BULLET = preload("res://Szenen/Bullet.tscn")
-const SHOOTINGCOOLDOWN = 20
+var xDirection = 0 #Input x Richtung
+var yDirection = 0 #Input y Richtung
+var shootRdy = true #Kann gerade geschossen werden?
+var currentBulletCooldown = 0 #aktuelle Ticks bis wieder geschossen werden kann
+const SPEED = 2 #Raumschiff geschwindigkeit
+const BULLET = preload("res://Szenen/Bullet.tscn") #halte Bullet zum instanziieren bereit
+const BULLETCOOLDOWN = 20 #Warteticks zwischen Schuessen
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	movement()
-	shoot(delta)
+
+func _process(_delta):
+	movement() #Bewege Raumschiff
+	shoot() #Schieße
+	collisionTest() #Schau, ob du getroffen wurdest
+	if Input.is_action_just_released("ui_cancel"): #Schau, ob geschlossen werden soll
+		get_tree().quit() #Schließe game
+
+func collisionTest():
+	for bodie in self.get_overlapping_areas():
+		if bodie.is_alive: #Schau, ob ein Objekt, was das Schiff getroffen hat noch lebt
+			gameOver() #Spiel verloren
+			
 	
 
 
-func shoot(delta):
-	if shootRdy:
-		if Input.is_action_pressed("shoot"):
-			var bullet = BULLET.instance()
+func gameOver():
+	get_tree().reload_current_scene() #restarte game
+
+func shoot():
+	if shootRdy: #Schaue, ob geschossen werden kann
+		if Input.is_action_pressed("shoot"): #,ob geschossen werden soll
+			var bullet = BULLET.instance() #Erstelle Zwei Kugeln an der Position der Kanonen
 			bullet.set_position(position + Vector2(-19, -4))
 			get_parent().add_child(bullet)
 			bullet = BULLET.instance()
 			bullet.set_position(position + Vector2(19, -4))
 			get_parent().add_child(bullet)
-			shootRdy = false
-			bulletCooldown = SHOOTINGCOOLDOWN
-	elif bulletCooldown == 0:
+			shootRdy = false #Setze neuen Cooldown
+			currentBulletCooldown = BULLETCOOLDOWN
+	elif currentBulletCooldown == 0: #Naechster Schuss bereit
 		shootRdy = true
 	else:
-		bulletCooldown -= 1
+		currentBulletCooldown -= 1 #verringere Cooldown
 
-func movement():
+func movement(): #Addiere die Tastendrücke zu einem 1D Vektor
 	xDirection = 0
 	yDirection = 0
 	if Input.is_action_pressed("left") && self.position.x > 210:
@@ -51,7 +62,7 @@ func movement():
 	if Input.is_action_pressed("up") && self.position.y > 250:
 		yDirection -= 1
 	
-	self.position.x += xDirection * SPEED
+	self.position.x += xDirection * SPEED #Bewege das Schiff in die Richtungen
 	self.position.y += yDirection * SPEED
 	
 
