@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/LaserBullet.png-85769f8661211c45d9009776c5376f9f.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://icon.png"
+source_file="res://Art Assets/LaserBullet.png"
+dest_files=[ "res://.import/LaserBullet.png-85769f8661211c45d9009776c5376f9f.stex" ]
+
 [params]
 
 compress/mode=0

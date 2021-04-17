@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/Rocket V1.png-b8d1e42f49ea965f89da1a632d1752be.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://icon.png"
+source_file="res://Art Assets/Rocket V1.png"
+dest_files=[ "res://.import/Rocket V1.png-b8d1e42f49ea965f89da1a632d1752be.stex" ]
+
 [params]
 
 compress/mode=0

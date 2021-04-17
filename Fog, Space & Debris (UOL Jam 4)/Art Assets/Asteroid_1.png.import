@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/Asteroid_1.png-e456e6f7afd181cfc974ab67163497c1.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://icon.png"
+source_file="res://Art Assets/Asteroid_1.png"
+dest_files=[ "res://.import/Asteroid_1.png-e456e6f7afd181cfc974ab67163497c1.stex" ]
+
 [params]
 
 compress/mode=0
