@@ -9,6 +9,8 @@ var speed = 0.1
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
 	position.y += speed
+	if (position.y >= 630):
+		position.y = 630
 
 func blowFog():
 	position.y -= 80
