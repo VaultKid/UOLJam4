@@ -30,19 +30,20 @@ func _process(delta):
 		activated = arrowKeyPressed()
 
 func play(i):
-	print(str(i))
+	getArrow(i).play("blue")
 
 func playTrue(i):
-	print(str(i) + "correct")
+	getArrow(i).play("green")
 
 func playFalse(i):
-	print(str(i) + "false")
+	getArrow(i).play("red")
 
 func reward():
 	print("gewonnen")
 
 func computerTurn():
 	if currentCooldown <= 0:
+		resetCollors()
 		if currentLength == maxLength:
 			step = 0
 			currentLength = 0
@@ -53,6 +54,7 @@ func computerTurn():
 			currentLength = 0
 			activated = false
 		elif step <= currentLength:
+			resetCollors()
 			play(combinations[step])
 			step += 1
 			currentCooldown = COOLDOWN
@@ -70,14 +72,17 @@ func playerTurn():
 	var playerInput = getInput()
 	if playerInput != 0:
 		if playerInput == combinations[step]:
+			resetCollors()
 			playTrue(playerInput)
 			if step < currentLength - 1:
 				step += 1
 			else:
 				step = 0
 				player = false
+				currentCooldown = COOLDOWN
 				
 		else:
+			resetCollors()
 			playFalse(playerInput)
 			scramble()
 			player = false
@@ -86,7 +91,15 @@ func playerTurn():
 			currentCooldown = COOLDOWN
 
 
-
+func getArrow(i):
+	if i == 1:
+		return $Up
+	if i == 2:
+		return $Left
+	if i == 3:
+		return $Down
+	if i == 4:
+		return $Right
 
 func getInput():
 	if Input.is_action_just_pressed("simonUp"):
@@ -99,6 +112,12 @@ func getInput():
 		return 4
 	else:
 		return 0
+
+func resetCollors():
+	$Up.play("default")
+	$Left.play("default")
+	$Down.play("default")
+	$Right.play("default")
 
 func scramble():
 	for i in range(0, combinations.size()):
