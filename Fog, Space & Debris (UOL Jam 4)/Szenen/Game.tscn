@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Szenen/Player.tscn" type="PackedScene" id=1]
 
-
 [node name="Game" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 46, 45 )
