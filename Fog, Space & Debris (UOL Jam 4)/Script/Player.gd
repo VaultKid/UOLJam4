@@ -17,13 +17,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	movement()
-	shoot(delta)
+	shoot()
 	
 
 
-func shoot(delta):
+func shoot():
 	if shootRdy:
 		if Input.is_action_pressed("shoot"):
 			var bullet = BULLET.instance()
