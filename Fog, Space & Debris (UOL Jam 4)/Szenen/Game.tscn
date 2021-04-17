@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Szenen/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Szenen/Background.tscn" type="PackedScene" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://Szenen/PinMinigame.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Szenen/Fog.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Szenen/SimonGame.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Fonts/poco/Poco.tres" type="DynamicFont" id=9]
+[ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Szenen/Fog2.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
@@ -31,7 +32,7 @@ layer = 20
 [node name="Fog" parent="." instance=ExtResource( 7 )]
 
 [node name="SimonGame" parent="." instance=ExtResource( 8 )]
-position = Vector2( 22, 48 )
+position = Vector2( 22, 54 )
 z_index = 20
 
 [node name="Werbung" type="Label" parent="."]
@@ -50,3 +51,5 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Fog2" parent="." instance=ExtResource( 10 )]

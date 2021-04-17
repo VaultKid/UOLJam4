@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Fonts/Font1t.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/Font1t.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/connection_ii/ConnectionII.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://Fonts/connection_ii/ConnectionII.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/connection_ii/ConnectionII.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Script/PinMinigame.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]

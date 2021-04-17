@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Script/SimonGame.gd" type="Script" id=1]
 [ext_resource path="res://Art Assets/arrows/downArrowR.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Art Assets/arrows/leftArrow.png" type="Texture" id=15]
 [ext_resource path="res://Art Assets/arrows/rightArrowB.png" type="Texture" id=16]
 [ext_resource path="res://Art Assets/arrows/rightArrowR.png" type="Texture" id=17]
+[ext_resource path="res://fonts/connection_ii/ConnectionII.tres" type="DynamicFont" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -128,3 +129,16 @@ frames = SubResource( 3 )
 [node name="Right" type="AnimatedSprite" parent="."]
 position = Vector2( 99, 65 )
 frames = SubResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 18.0
+margin_top = -32.0
+margin_right = 114.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 18 )
+text = "calibrate 
+wipers"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Script/HUD.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/connection_ii/ConnectionII.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/connection_ii/ConnectionII.tres" type="DynamicFont" id=2]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
