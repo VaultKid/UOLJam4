@@ -9,6 +9,7 @@ var rng = RandomNumberGenerator.new()
 var spectrumStart = 0.5
 var spectrumEnd = 4.5
 const DIFFICULTY = 0.3
+var ledWerbung = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass 
@@ -37,6 +38,8 @@ func _process(_delta):
 		spawnRdy = true
 	else:
 		currentCooldown -= 1
+	if(ledWerbung):
+		$"Werbung".add_color_override("font_color", Color8(rng.randi_range(0,255), rng.randi_range(0,255), rng.randi_range(0,255)))
 
 
 
