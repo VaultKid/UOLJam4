@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Audio Assets/MainMusikIntro.wav" type="AudioStream" id=1]
-[ext_resource path="res://Szenen/AudioManager.gd" type="Script" id=2]
+[ext_resource path="res://Audio Assets/MainMusikLoop.wav" type="AudioStream" id=2]
+[ext_resource path="res://Script/AudioManager.gd" type="Script" id=3]
+[ext_resource path="res://Audio Assets/Explosion2.wav" type="AudioStream" id=4]
 
-[node name="Node2D" type="Node2D"]
+[node name="AudioManager" type="Node2D"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Intro Player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
-script = ExtResource( 2 )
-[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_onAudioFinishedPlaying"]
+script = ExtResource( 3 )
+
+[node name="Loop Player" type="AudioStreamPlayer" parent="Intro Player"]
+stream = ExtResource( 2 )
+
+[node name="ExplosionSFX" type="AudioStreamPlayer" parent="Intro Player"]
+stream = ExtResource( 4 )
+[connection signal="finished" from="Intro Player" to="Intro Player" method="_on_Intro_Player_finished"]
