@@ -20,7 +20,17 @@ func _ready():
 func _process(_delta):
 	movement()
 	shoot()
+	collisionTest()
+	if Input.is_action_just_released("ui_cancel"):
+		get_tree().quit()
+
+func collisionTest():
+	for bodie in self.get_overlapping_areas():
+		if bodie.is_alive:
+			get_tree().reload_current_scene()
 	
+
+
 
 
 func shoot():
