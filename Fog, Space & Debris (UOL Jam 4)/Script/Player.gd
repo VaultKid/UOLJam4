@@ -8,7 +8,7 @@ var shootRdy = true
 var bulletCooldown = 0
 const SPEED = 2
 const BULLET = preload("res://Szenen/Bullet.tscn")
-const SHOOTINGCOOLDOWN = 10
+const SHOOTINGCOOLDOWN = 20
 
 
 # Called when the node enters the scene tree for the first time.
