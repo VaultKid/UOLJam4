@@ -19,3 +19,4 @@ stream = ExtResource( 4 )
 stream = ExtResource( 2 )
 [connection signal="finished" from="Intro Player" to="Intro Player" method="_on_Intro_Player_finished"]
 [connection signal="finished" from="Intro Player" to="." method="_on_Intro_Player_finished"]
+[connection signal="finished" from="Loop Player" to="." method="_on_Loop_Player_finished"]

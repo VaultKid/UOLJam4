@@ -13,3 +13,8 @@ func playExplosion():
 func _on_Intro_Player_finished():
 	$"Loop Player".play(0.0)
 	pass # Replace with function body.
+
+
+func _on_Loop_Player_finished():
+	$"Loop Player".play(0.0)
+	pass # Replace with function body.
