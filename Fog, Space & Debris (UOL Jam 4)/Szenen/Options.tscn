@@ -3,6 +3,7 @@
 [ext_resource path="res://Script/Options.gd" type="Script" id=1]
 [ext_resource path="res://Script/HSlider.gd" type="Script" id=2]
 
+
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/connection_ii/ConnectionII.otf"
 
