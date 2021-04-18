@@ -19,8 +19,11 @@ func _process(_delta):
 	spectrumStart = 1.5 - (cooldown/60)
 	spectrumEnd = 5 - (cooldown/60)
 	if spawnRdy: #Zähle den Cooldown bis der nächste Asteroid gespawnt ist
+		
 		rng.randomize()
 		var rngNumber = int(round(rng.randf_range(spectrumStart, spectrumEnd)))
+		if cooldown == 10 && 25 == int(round(rngNumber * 10)):
+			spawnHaenchen()
 		if rngNumber <= 1:
 			spawnSatellite()
 		elif rngNumber == 2:
@@ -42,7 +45,13 @@ func _process(_delta):
 		$"Werbung".add_color_override("font_color", Color8(rng.randi_range(0,255), rng.randi_range(0,255), rng.randi_range(0,255)))
 
 
-
+func spawnHaenchen():
+	rng.randomize()
+	var rngNumber = rng.randf_range(-110.0, 110.0) #Erzeuge zufaellige Position
+	var haenchens = preload("res://Szenen/Haenchen.tscn")
+	var haenchen = haenchens.instance() #spawn Rocket
+	haenchen.set_position(Vector2(320 + rngNumber , -10))
+	self.add_child(haenchen)
 	
 
 func spawnSatellite():
