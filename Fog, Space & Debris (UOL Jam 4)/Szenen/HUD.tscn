@@ -23,7 +23,7 @@ margin_top = 219.433
 margin_right = 68.0786
 margin_bottom = 239.433
 custom_fonts/font = ExtResource( 2 )
-text = "Zeit:"
+text = "Time:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
