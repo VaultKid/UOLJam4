@@ -9,7 +9,7 @@ var maxLength = 4
 var currentLength = 0
 var step = 0
 var currentCooldown = 0
-const COOLDOWN = 30
+const COOLDOWN = 20
 var activated = false
 var player = false
 
@@ -39,7 +39,8 @@ func playFalse(i):
 	getArrow(i).play("red")
 
 func reward():
-	get_parent().get_node("Fog2").clear()
+	#get_parent().get_node("Fog2").clear()
+	print("reward")
 
 func computerTurn():
 	if currentCooldown <= 0:
@@ -64,6 +65,8 @@ func computerTurn():
 			player = true
 			
 	else:
+		if currentCooldown < 5:
+			resetCollors()
 		currentCooldown -= 1
 
 
@@ -89,6 +92,7 @@ func playerTurn():
 			step = 0
 			currentLength = 0
 			currentCooldown = COOLDOWN
+
 
 
 func getArrow(i):
