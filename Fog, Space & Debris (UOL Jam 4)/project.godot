@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Fog, Space & Debris (UOL Jam 4)"
-run/main_scene="res://Szenen/Game.tscn"
+run/main_scene="res://Szenen/SimonGame.tscn"
 config/icon="res://icon.png"
 
 [display]
