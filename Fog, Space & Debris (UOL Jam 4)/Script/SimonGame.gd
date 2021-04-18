@@ -39,8 +39,8 @@ func playFalse(i):
 	getArrow(i).play("red")
 
 func reward():
-	#get_parent().get_node("Fog2").clear()
-	print("reward")
+	get_parent().get_node("Fog2").clear()
+
 
 func computerTurn():
 	if currentCooldown <= 0:
