@@ -21,13 +21,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if activated:
-		if !player:
-			computerTurn()
+	var gameOver = get_parent().gameOver
+	if !gameOver:
+		if activated:
+			if !player:
+				computerTurn()
+			else:
+				playerTurn()
 		else:
-			playerTurn()
-	else:
-		activated = arrowKeyPressed()
+			activated = arrowKeyPressed()
 
 func play(i):
 	getArrow(i).play("blue")

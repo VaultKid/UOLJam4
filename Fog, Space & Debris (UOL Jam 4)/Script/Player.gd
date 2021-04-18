@@ -30,9 +30,13 @@ func collisionTest():
 			
 	
 
-
 func gameOver():
-	get_tree().reload_current_scene() #restarte game
+	get_parent().gameOver = true
+	get_parent().get_node("GameOverUi").show()
+	get_parent().get_node("AudioManager").stopLoopPlayer()
+	get_parent().get_node("AudioManager").playGameOver()
+	$"AnimatedSprite".hide()
+	#get_tree().reload_current_scene() #restarte game
 
 func shoot():
 	if shootRdy: #Schaue, ob geschossen werden kann

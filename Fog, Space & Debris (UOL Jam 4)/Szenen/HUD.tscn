@@ -7,9 +7,9 @@
 script = ExtResource( 1 )
 
 [node name="HighscoreText" type="Label" parent="."]
-margin_left = 28.6996
+margin_left = 26.6996
 margin_top = 192.324
-margin_right = 130.7
+margin_right = 128.7
 margin_bottom = 212.324
 custom_fonts/font = ExtResource( 2 )
 text = "Highscore:"
@@ -18,9 +18,9 @@ __meta__ = {
 }
 
 [node name="TimerText" type="Label" parent="."]
-margin_left = 30.0786
+margin_left = 28.0786
 margin_top = 219.433
-margin_right = 70.0786
+margin_right = 68.0786
 margin_bottom = 239.433
 custom_fonts/font = ExtResource( 2 )
 text = "Zeit:"
@@ -29,23 +29,25 @@ __meta__ = {
 }
 
 [node name="Timer" type="Label" parent="."]
-margin_left = 140.656
+margin_left = 109.656
 margin_top = 220.348
-margin_right = 180.656
+margin_right = 149.656
 margin_bottom = 240.348
 custom_fonts/font = ExtResource( 2 )
 text = "0"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Highscore" type="Label" parent="."]
-margin_left = 139.728
-margin_top = 193.404
-margin_right = 179.728
-margin_bottom = 213.404
+margin_left = 129.0
+margin_top = 193.265
+margin_right = 150.0
+margin_bottom = 213.265
 custom_fonts/font = ExtResource( 2 )
 text = "0"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

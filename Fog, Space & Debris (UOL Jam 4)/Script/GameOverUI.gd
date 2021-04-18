@@ -1,10 +1,10 @@
-extends CanvasLayer
+extends Node2D
 
 
 # Declare member variables here. Examples:
 # var a = 2
-var score = 0
-var time = 0
+# var b = "text"
+var gameOver = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,8 +13,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if (get_parent().gameOver == false):
-		time +=1;
-		$Highscore.text = str(score) #aktuallisiere das Lable
-		$Timer.text = str(round(time/60))
+func _process(delta):
+	gameOver = get_parent().gameOver

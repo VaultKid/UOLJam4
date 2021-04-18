@@ -25,3 +25,6 @@ func _on_Intro_Player_finished():
 
 func _on_Loop_Player_finished():
 	$"Loop Player".play(0.0)
+	
+func stopLoopPlayer():
+	$"Loop Player".stop()
