@@ -1,7 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Szenen/Options.gd" type="Script" id=1]
-[ext_resource path="res://Szenen/HSlider.gd" type="Script" id=2]
+[ext_resource path="res://Script/Options.gd" type="Script" id=1]
+[ext_resource path="res://Script/HSlider.gd" type="Script" id=2]
+
+
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/connection_ii/ConnectionII.otf"
