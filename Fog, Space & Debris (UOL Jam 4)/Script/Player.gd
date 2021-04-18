@@ -21,8 +21,7 @@ func _process(_delta):
 		movement() #Bewege Raumschiff
 		shoot() #Schieße
 		collisionTest() #Schau, ob du getroffen wurdest
-		if Input.is_action_just_released("ui_cancel"): #Schau, ob geschlossen werden soll
-			get_tree().quit() #Schließe game
+		
 
 func collisionTest():
 	if !get_parent().gameOver:
@@ -33,6 +32,7 @@ func collisionTest():
 	
 
 func gameOver():
+	get_parent().get_node("Camera").gameEndShake()
 	get_parent().gameOver = true
 	get_parent().get_node("GameOverUi").show()
 	get_parent().get_node("AudioManager").stopLoopPlayer()

@@ -11,7 +11,7 @@
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Szenen/Fog2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Szenen/Screenshake.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Szenen/Camera2D.gd" type="Script" id=12]
+[ext_resource path="res://Script/Camera2D.gd" type="Script" id=12]
 [ext_resource path="res://Szenen/GameOverUI.tscn" type="PackedScene" id=13]
 
 [node name="Game" type="Node2D"]

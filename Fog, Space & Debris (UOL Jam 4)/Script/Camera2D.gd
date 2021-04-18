@@ -15,3 +15,5 @@ func small_shake():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func gameEndShake():
+	$Screenshake.start(0.5, 30, 10, 1)

@@ -16,6 +16,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if Input.is_action_just_released("ui_cancel"): #Schau, ob geschlossen werden soll
+			get_tree().change_scene("res://Szenen/Menu.tscn") 
 	spectrumStart = 1.5 - (cooldown/60)
 	spectrumEnd = 5 - (cooldown/60)
 	if spawnRdy: #Zähle den Cooldown bis der nächste Asteroid gespawnt ist
