@@ -30,3 +30,7 @@ func _on_quit_pressed():
 
 func _on_options_pressed():
 	get_tree().change_scene("res://Szenen/Options.tscn")
+
+
+func _on_Credits_pressed():
+	get_tree().change_scene("res://Szenen/Credits.tscn")
