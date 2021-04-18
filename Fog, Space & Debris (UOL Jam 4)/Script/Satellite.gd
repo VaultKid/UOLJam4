@@ -19,5 +19,6 @@ func _process(_delta):
 
 func destroy():
 	get_parent().get_node("AudioManager").playExplosion()
-	get_parent().get_node("HUD").score += 2 #+1 Score
+	get_parent().get_node("HUD").score += 1 #+1 Score
+	get_parent().get_node("Camera").small_shake()
 	queue_free() #zerstoere dich

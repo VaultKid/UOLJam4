@@ -59,6 +59,7 @@ func computerTurn():
 		elif step <= currentLength:
 			resetCollors()
 			play(combinations[step])
+			playArrow(combinations[step])
 			step += 1
 			currentCooldown = COOLDOWN
 		elif currentLength < maxLength:
@@ -79,23 +80,34 @@ func playerTurn():
 		if playerInput == combinations[step]:
 			resetCollors()
 			playTrue(playerInput)
+			playArrow(playerInput)
 			if step < currentLength - 1:
 				step += 1
 			else:
 				step = 0
 				player = false
-				currentCooldown = COOLDOWN
+				currentCooldown = COOLDOWN * 2
+				get_parent().get_node("AudioManager").playClearMinigame()
 				
 		else:
 			resetCollors()
 			playFalse(playerInput)
+			playArrow(playerInput)
 			scramble()
 			player = false
 			step = 0
 			currentLength = 0
 			currentCooldown = COOLDOWN
 
-
+func playArrow(i):
+	if i == 1:
+		get_parent().get_node("AudioManager").playArrow1()
+	if i == 2:
+		get_parent().get_node("AudioManager").playArrow2()
+	if i == 3:
+		get_parent().get_node("AudioManager").playArrow3()
+	if i == 4:
+		get_parent().get_node("AudioManager").playArrow4()
 
 func getArrow(i):
 	if i == 1:
