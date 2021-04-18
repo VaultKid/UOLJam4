@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Script/Options.gd" type="Script" id=1]
 [ext_resource path="res://Script/HSlider.gd" type="Script" id=2]
-
+[ext_resource path="res://Szenen/Menu Background.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/connection_ii/ConnectionII.otf"
@@ -66,5 +66,8 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MenuBackground" parent="." instance=ExtResource( 3 )]
+z_index = -14
 [connection signal="value_changed" from="HBoxContainer/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
