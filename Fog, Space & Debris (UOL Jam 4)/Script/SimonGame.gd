@@ -93,7 +93,8 @@ func playerTurn():
 			currentLength = 0
 			currentCooldown = COOLDOWN
 
-
+func playArrow(i):
+	pass
 
 func getArrow(i):
 	if i == 1:
