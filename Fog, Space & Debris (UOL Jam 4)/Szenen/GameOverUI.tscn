@@ -123,3 +123,4 @@ offset = Vector2( 180, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
+[connection signal="pressed" from="GameOverBox/PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]
