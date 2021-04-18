@@ -25,7 +25,7 @@ func _process(_delta):
 		
 		rng.randomize()
 		var rngNumber = int(round(rng.randf_range(spectrumStart, spectrumEnd)))
-		if cooldown == 10 && 25 == int(round(rngNumber * 10)):
+		if cooldown == 10 && 25 == int(round(rng.randf_range(1, 100))):
 			spawnHaenchen()
 		if rngNumber <= 1:
 			spawnSatellite()
