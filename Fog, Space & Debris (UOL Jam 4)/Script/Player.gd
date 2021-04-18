@@ -17,11 +17,12 @@ func _ready():
 
 
 func _process(_delta):
-	movement() #Bewege Raumschiff
-	shoot() #Schieße
-	collisionTest() #Schau, ob du getroffen wurdest
-	if Input.is_action_just_released("ui_cancel"): #Schau, ob geschlossen werden soll
-		get_tree().quit() #Schließe game
+	if 	!get_parent().gameOver:
+		movement() #Bewege Raumschiff
+		shoot() #Schieße
+		collisionTest() #Schau, ob du getroffen wurdest
+		if Input.is_action_just_released("ui_cancel"): #Schau, ob geschlossen werden soll
+			get_tree().quit() #Schließe game
 
 func collisionTest():
 	if !get_parent().gameOver:

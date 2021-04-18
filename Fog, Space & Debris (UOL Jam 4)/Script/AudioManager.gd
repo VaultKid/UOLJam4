@@ -39,4 +39,4 @@ func _on_Loop_Player_finished():
 	$"Loop Player".play(0.0)
 	
 func stopLoopPlayer():
-	$"Loop Player".stop()
+	$"Loop Player".set_volume_db(-200.0)
