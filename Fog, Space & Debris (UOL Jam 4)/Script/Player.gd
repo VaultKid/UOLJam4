@@ -24,9 +24,10 @@ func _process(_delta):
 		get_tree().quit() #Schließe game
 
 func collisionTest():
-	for bodie in self.get_overlapping_areas():
-		if bodie.is_alive: #Schau, ob ein Objekt, was das Schiff getroffen hat noch lebt
-			gameOver() #Spiel verloren
+	if !get_parent().gameOver:
+		for bodie in self.get_overlapping_areas():
+			if bodie.is_alive: #Schau, ob ein Objekt, was das Schiff getroffen hat noch lebt
+				gameOver() #Spiel verloren
 			
 	
 

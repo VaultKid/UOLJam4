@@ -17,6 +17,9 @@ func playNewMinigame():
 func playClearMinigame():
 	$"ClearMinigame".play(0.0)
 	
+func playGameOver():
+	$"GameOver".play(0.0)
+	
 func playArrow1():
 	$"PlayArrow1".play(0.0)
 
