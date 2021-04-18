@@ -14,11 +14,13 @@ var darkGreen = Color8(0, 108, 76)
 var green = Color8(110, 204, 130)
 var orange = Color8(255, 160, 116)
 var white = Color8(232, 232, 255, 125)
+var firstRoll = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
 	rollPin()
+	firstRoll = false
 	pass # Replace with function body.
 		
 		
@@ -46,6 +48,8 @@ func rollPin():
 	$"Number3".text=String(numbers[2])
 	$"Number4".text=String(numbers[3])
 	changeTextColor(5, darkBlue)
+	if(!firstRoll):
+		get_parent().get_node("AudioManager").playNewMinigame()
 	
 	
 func checkInput():
@@ -89,11 +93,14 @@ func checkNumbers(var pressed):
 	else:
 		#print("loser")
 		pinPointer = 0
+		changeTextColor(5, darkBlue)
+		get_parent().get_node("AudioManager").playNewMinigame()
 	if (pinPointer >= pinCount):
 		pinPointer = 0
 		pinActive = false
 		changeTextColor(5, white)
 		get_parent().get_node("Fog").blowFog()
+		get_parent().get_node("AudioManager").playClearMinigame()
 		#print("nice you won!")
 
 func changeTextColor(var pinPointer, var color):
