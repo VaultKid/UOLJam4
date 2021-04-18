@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Script/startup.gd" type="Script" id=1]
+[ext_resource path="res://Art Assets/logo.png" type="Texture" id=2]
 
 [node name="startup" type="Node"]
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 320, 160 )
+texture = ExtResource( 2 )
