@@ -31,9 +31,9 @@ func _process(delta):
 		checkInput()
 	if (!pinActive && !waitStart):
 		waitStart = true
-		print("yeild start")
+		#print("yeild start")
 		yield(get_tree().create_timer(cooldown), "timeout")
-		print("yeild end")
+		#print("yeild end")
 		rollPin()
 		waitStart = false	
 
@@ -43,7 +43,7 @@ func rollPin():
 	numbers = []
 	for num in range(pinCount):
 		numbers.insert(num, rng.randi_range(1,9))
-	print(numbers)
+	#print(numbers)
 	$"Number1".text=String(numbers[0])
 	$"Number2".text=String(numbers[1])
 	$"Number3".text=String(numbers[2])
