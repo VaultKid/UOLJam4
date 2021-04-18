@@ -20,7 +20,6 @@ margin_top = 16.0
 margin_right = 616.0
 margin_bottom = 97.0
 custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0.909804, 0.909804, 1, 1 )
 text = "Type pin to 
 activate
 fog blower"
