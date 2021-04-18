@@ -3,8 +3,8 @@ extends Node
 var volume = -14.0
 
 func _ready():
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), volume)
-
+	#AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), volume)
+	pass
 func playExplosion():
 	$"ExplosionSFX".play(0.0)
 

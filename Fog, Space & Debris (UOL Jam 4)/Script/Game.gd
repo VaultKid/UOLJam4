@@ -2,6 +2,7 @@ extends Node2D
 
 
 # Declare member variables here. Examples:
+var volume = 0
 var currentCooldown = 0 #aktuelle Ticks, bis der naechste Asteroid gespawnt wirds
 var cooldown = 60 #Ticks zwisched dem Spawnen von Asteroiden
 var spawnRdy = true #Ob ein Asteroid gespawnt werden kann

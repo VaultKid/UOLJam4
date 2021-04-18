@@ -8,7 +8,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	#get_node("HBoxContainer/VBoxContainer/HSlider").value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master") + 200)
+	pass
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,17 +18,10 @@ func _process(delta):
 	print(str(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))))
 
 
+func _on_back_pressed():
+	get_tree().change_scene("res://Szenen/Menu.tscn")
 
 
+func _on_HSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),  value)
 
-func _on_start_pressed():
-	
-	get_tree().change_scene("res://Szenen/Game.tscn")
-
-
-func _on_quit_pressed():
-	get_tree().quit()
-
-
-func _on_options_pressed():
-	get_tree().change_scene("res://Szenen/Options.tscn")
