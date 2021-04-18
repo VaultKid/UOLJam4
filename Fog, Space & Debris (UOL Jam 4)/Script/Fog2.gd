@@ -9,4 +9,6 @@ extends Node2D
 func clear():
 	$AnimatedSprite2.play("test")
 	$AnimatedSprite2.play("default")
+	get_parent().get_node("AudioManager").playWipe()
 	$AnimatedSprite.clear()
+	

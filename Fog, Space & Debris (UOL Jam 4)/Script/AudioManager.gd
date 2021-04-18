@@ -7,6 +7,9 @@ func _ready():
 	pass
 func playExplosion():
 	$"ExplosionSFX".play(0.0)
+	
+func playWipe():
+	$"Wipe".play(0.0)
 
 func playUI1():
 	$"UISFXPlayer1".play(0.0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Audio Assets/MainMusikIntro.wav" type="AudioStream" id=1]
 [ext_resource path="res://Audio Assets/MainMusikLoop.wav" type="AudioStream" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Audio Assets/Arrow2.wav" type="AudioStream" id=10]
 [ext_resource path="res://Audio Assets/Arrow4.wav" type="AudioStream" id=11]
 [ext_resource path="res://Audio Assets/GameOver.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio Assets/SickSFX.wav" type="AudioStream" id=13]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource( 3 )
@@ -41,6 +42,9 @@ stream = ExtResource( 8 )
 [node name="PlayArrow2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 
+[node name="Wipe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
 [node name="PlayArrow3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 
@@ -49,6 +53,6 @@ stream = ExtResource( 11 )
 
 [node name="GameOver" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-[connection signal="finished" from="Intro Player" to="." method="_on_Intro_Player_finished"]
 [connection signal="finished" from="Intro Player" to="Intro Player" method="_on_Intro_Player_finished"]
+[connection signal="finished" from="Intro Player" to="." method="_on_Intro_Player_finished"]
 [connection signal="finished" from="Loop Player" to="." method="_on_Loop_Player_finished"]
