@@ -13,8 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(str(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))))
-
+	#print(str(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))))
+	pass
 
 
 
