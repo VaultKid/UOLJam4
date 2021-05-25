@@ -11,7 +11,7 @@ Link to the Game Jam: https://itch.io/jam/uol-game-jam-4
 
 
 
-### Controls:
+## Controls:
 
 WASD - Move Ship
 Space - Attack
@@ -20,5 +20,6 @@ Up, Down, Left, Right - Solve Simon Says Minigame
 
 Tip: To Activate the Simon Says game, press a random Arrow Key
 
+## Credits:
 
-Easy and Relaxing Space Shooter is a game by Vault Kid & 404cokieNotFound
+Code, Art & Sound by Vault Kid & 404cokieNotFound
